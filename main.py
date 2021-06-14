@@ -2,7 +2,7 @@ from App import App
 
 
 # ? This code runs different routines when executed
-# TODO how to run system commands within python
+# how to run system commands within python
 # TODO ability to close all apps after finishing my routine
 # TODO there should be a routine for different things through out the day
 # TODO need to make a READ ME 
@@ -13,6 +13,8 @@ from App import App
 #! These are all the apps that are being used in your code
 #! Add apps by following the order format and find out where app is located
 # ? these apps are for open_app
+# todo add Terminal to the list
+# todo add Visual Studio Code
 headspace = App('Headspace')
 safari = App('Safari')
 slack = App('Slack')
@@ -31,51 +33,56 @@ stocks = App('Stocks', True)
 # headspace.close_app()
 # music.close_appSystem()
 
-messages.close_app()
-slack.close_app()
+#  * create the menu for the routine
+    #morning routine
+while True:
+        print('''
+1) School
+2) After School
+3) Resting
+4) Close Apps
+5) Exit
+        ''')
+        des = input('Number: ')
+        if des == '1':
+            safari.open_app()
+            slack.open_app()
+            while True:
+                print('''
+0) Go back
+1) Close School Apps
+''')
+                des = input('Number: ')
+                # TODO trying to let user open any app
+                if des == '0':
+                    break
+                elif des == '2':
+                    #close apps 
+                    safari.close_app() and slack.close_app()
+                    # slack.close_app()
+                    break
 
-# # * create the menu for the routine
-# print('''
-# Welcome sir,
-#     what are we doing?
+        elif des == '2':
+            safari.open_app()
+            headspace.open_app()
+            music.open_appSystem()
+            messages.open_appSystem()
+            stickies.open_appSystem()
+            print('''
+0) Go back
+1) Close After School Apps''')
 
-# 1) Daily
-# 2) Coding
-# 3) Exit
-# ''')
-# des = input('Number: ')
-# # these following list is to keep track which application is in each path
-# if des == '1':
-#     #morning routine
-#     while True:
-#         print('''
-# 0) Go back
-# 1) School
-# 2) After School
-# 3) Resting
-# 4) Close Apps
-#         ''')
-#         des = input('Number: ')
-#         if des == '1':
-#             safari.open_app()
-#             slack.open_app()
-#             # while True:X
-#             #     print('''
-#             #     0) Go back
-#             #     1) Another App
-#             #     2) Close School Apps
-#             #     3) Break Time
-#             #     4) Coding Time
-#             #     ''')
+        elif des == '3':
+            safari.open_app()
+            messages.open_appSystem()
+            music.open_appSystem()
+            print('''
+0) Go back
+1) Close Resting Apps''')
 
-#         elif des == '2':
-#             safari.open_app()
-#             headspace.open_app()
-#             music.open_appSystem()
-#             messages.open_appSystem()
-#             stickies.open_appSystem()
+        elif des == '4':
+            # todo (close specific or all apps)
+            print()
 
-#         elif des == '3':
-#             safari.open_app()
-#             messages.open_appSystem()
-#             music.open_appSystem()
+        else: 
+            break

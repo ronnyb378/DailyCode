@@ -15,7 +15,7 @@ class App:
         os.system(f'open /System/Applications/{self.app_name}.app')
         opened_System.append(f'{self.app_name}')
         #code works all the way till here
-        print(opened_System)
+        # print(opened_System)
         return opened_System
 
     #? this is another path to the second half of applications         
@@ -26,7 +26,7 @@ class App:
             
             os.system(f'open /Applications/{self.app_name}.app')
             opened.append(f'{self.app_name}')
-            print(opened)
+            # print(opened)
             return opened
 
     # #? this is to close any application
@@ -38,4 +38,3 @@ class App:
     def close_app(self):
         for names in opened: 
             os.system(f"killall {names}")
-            print('done')
