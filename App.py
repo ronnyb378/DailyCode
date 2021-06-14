@@ -29,12 +29,17 @@ class App:
             # print(opened)
             return opened
 
-    # #? this is to close any application
+    # #? this is to close any application located under System
     def close_appSystem(self):
-        for name in opened_System:
-            os.system(f'killall {name}')
-
-    #?this is another path to the second half of applications
+            os.system(f'killall {self.app_name}')
+            
+    #?to close an application located under Applications
     def close_app(self):
-        for names in opened: 
-            os.system(f"killall {names}")
+            os.system(f"killall {self.app_name}")
+            
+    #? this is to close all apps
+    def close_all(self):
+        for app_name in opened_System:
+            os.system(f'killall {app_name}')
+        for app_name in opened:
+            os.system(f'killall {app_name}')

@@ -28,13 +28,7 @@ notes = App('Notes', True)
 stickies = App('Stickies', True)
 stocks = App('Stocks', True)
 
-# headspace.open_app()
-# music.open_app()
-# headspace.close_app()
-# music.close_appSystem()
-
 #  * create the menu for the routine
-    #morning routine
 while True:
         print('''
 1) School
@@ -56,7 +50,7 @@ while True:
                 # TODO trying to let user open any app
                 if des == '0':
                     break
-                elif des == '2':
+                elif des == '1':
                     #close apps 
                     safari.close_app() and slack.close_app()
                     # slack.close_app()
@@ -68,9 +62,21 @@ while True:
             music.open_appSystem()
             messages.open_appSystem()
             stickies.open_appSystem()
-            print('''
+            while True:
+                print('''
 0) Go back
 1) Close After School Apps''')
+                des = input('Number: ')
+                if des == '0':
+                    break
+                elif des == '1':                    
+                    #close apps 
+                    safari.close_app()
+                    headspace.close_app()
+                    messages.close_appSystem()
+                    stickies.close_appSystem()
+                    break
+                
 
         elif des == '3':
             safari.open_app()
