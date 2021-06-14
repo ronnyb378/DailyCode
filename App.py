@@ -15,6 +15,7 @@ class App:
         os.system(f'open /System/Applications/{self.app_name}.app')
         opened_System.append(f'{self.app_name}')
         #code works all the way till here
+        print(opened_System)
         return opened_System
 
     #? this is another path to the second half of applications         
@@ -29,10 +30,12 @@ class App:
             return opened
 
     # #? this is to close any application
-    # def close_appSystem(self):
-    #     os.close(f'open /System/Applications/{self}.app')
+    def close_appSystem(self):
+        for name in opened_System:
+            os.system(f'killall {name}')
 
-    # #?this is another path to the second half of applications
-    # def close_app(self):
-    #     for names in opened: 
-    #         os.system(f'''osascript -e "quit app '{names}'"''')
+    #?this is another path to the second half of applications
+    def close_app(self):
+        for names in opened: 
+            os.system(f"killall {names}")
+            print('done')

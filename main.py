@@ -16,7 +16,6 @@ from App import App
 headspace = App('Headspace')
 safari = App('Safari')
 slack = App('Slack')
-visualcode = App('Visual Studio Code')
 
 # ? these apps are for open_appSystem
 music = App('Music', True)
@@ -29,49 +28,54 @@ stocks = App('Stocks', True)
 
 # headspace.open_app()
 # music.open_app()
+# headspace.close_app()
+# music.close_appSystem()
 
-# * create the menu for the routine
-print('''
-Welcome sir,
-    what are we doing?
+messages.close_app()
+slack.close_app()
 
-1) Daily
-2) Coding
-3) Exit
-''')
-des = input('Number: ')
-# these following list is to keep track which application is in each path
-if des == '1':
-    #morning routine
-    while True:
-        print('''
-0) Go back
-1) School
-2) After School
-3) Resting
-        ''')
-        des = input('Number: ')
-        if des == '1':
-            safari.open_app()
-            slack.open_app()
-            # while True:
-            #     print('''
-            #     0) Go back
-            #     1) Another App
-            #     2) Close School Apps
-            #     3) Break Time
-            #     4) Coding Time
-            #     ''')
+# # * create the menu for the routine
+# print('''
+# Welcome sir,
+#     what are we doing?
 
-        elif des == '2':
-            safari.open_app()
-            headspace.open_app()
-            music.open_appSystem()
-            messages.open_appSystem()
-            stickies.open_appSystem()
+# 1) Daily
+# 2) Coding
+# 3) Exit
+# ''')
+# des = input('Number: ')
+# # these following list is to keep track which application is in each path
+# if des == '1':
+#     #morning routine
+#     while True:
+#         print('''
+# 0) Go back
+# 1) School
+# 2) After School
+# 3) Resting
+# 4) Close Apps
+#         ''')
+#         des = input('Number: ')
+#         if des == '1':
+#             safari.open_app()
+#             slack.open_app()
+#             # while True:X
+#             #     print('''
+#             #     0) Go back
+#             #     1) Another App
+#             #     2) Close School Apps
+#             #     3) Break Time
+#             #     4) Coding Time
+#             #     ''')
 
-        elif des == '3':
-            safari.open_app()
-            messages.open_appSystem()
-            music.open_appSystem()
+#         elif des == '2':
+#             safari.open_app()
+#             headspace.open_app()
+#             music.open_appSystem()
+#             messages.open_appSystem()
+#             stickies.open_appSystem()
 
+#         elif des == '3':
+#             safari.open_app()
+#             messages.open_appSystem()
+#             music.open_appSystem()
