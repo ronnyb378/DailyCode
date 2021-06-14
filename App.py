@@ -3,6 +3,7 @@ import os
 opened_System = []
 opened = []
 
+
 class App:
     def __init__(self, app_name, system_app= False):
         self.app_name = app_name
@@ -37,9 +38,15 @@ class App:
     def close_app(self):
             os.system(f"killall {self.app_name}")
             
-    #? this is to close all apps
-    def close_all(self):
-        for app_name in opened_System:
-            os.system(f'killall {app_name}')
-        for app_name in opened:
-            os.system(f'killall {app_name}')
+    # #? this is to close all apps
+    # def close_all(self):
+    #     for app_name in opened_System:
+    #         os.system(f'killall {app_name}')
+    #     for app_name in opened:
+    #         os.system(f'killall {app_name}')
+
+    # def close_all(self):
+    #     if self.system_app:
+    #         self.close_appSystem()
+    #     else:
+    #         self.close_app

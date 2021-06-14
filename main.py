@@ -1,25 +1,23 @@
 from App import App
 
-
-# ? This code runs different routines when executed
 # how to run system commands within python
-# TODO ability to close all apps after finishing my routine
+# ability to close all apps after finishing my routine
 # TODO there should be a routine for different things through out the day
 # TODO need to make a READ ME 
-
 # TODO have it open the directory for school so that you can edit/use/open school files during school
-
 
 #! These are all the apps that are being used in your code
 #! Add apps by following the order format and find out where app is located
 # ? these apps are for open_app
 # todo add Terminal to the list
 # todo add Visual Studio Code
+all_appsSystem = ['Headspace', 'Safari', 'Slack']
 headspace = App('Headspace')
 safari = App('Safari')
 slack = App('Slack')
 
 # ? these apps are for open_appSystem
+all_apps = ['Music', 'Calendar', 'Launchpad', 'Messages', 'Notes', 'Stickies', 'Stocks']
 music = App('Music', True)
 calendar = App('Calender', True)
 launchpad = App('Launchpad', True)
@@ -76,7 +74,6 @@ while True:
                     messages.close_appSystem()
                     stickies.close_appSystem()
                     break
-                
 
         elif des == '3':
             safari.open_app()
@@ -85,10 +82,21 @@ while True:
             print('''
 0) Go back
 1) Close Resting Apps''')
+            des = input('Number: ')
+            if des == '0':
+                break
+            elif des == '1':
+                #close apps
+                safari.close_app()
+                messages.close_appSystem()
+                # music.close_appSystem()
 
         elif des == '4':
             # todo (close specific or all apps)
-            print()
+            #! THIS NEEDS FIXIN
+            for title in all_appsSystem:
+                title.close_appSystem()
+            print(all_apps)
 
         else: 
             break
