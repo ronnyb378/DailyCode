@@ -1,9 +1,12 @@
+
 from App import App
+
 
 # how to run system commands within python
 # ability to close all apps after finishing my routine
 # TODO there should be a routine for different things through out the day
 # TODO need to make a READ ME 
+# ! TODO tell me which apps where open and closed
 # TODO have it open the directory for school so that you can edit/use/open school files during school
 
 #! These are all the apps that are being used in your code
@@ -11,7 +14,6 @@ from App import App
 # ? these apps are for open_app
 # todo add Terminal to the list
 # todo add Visual Studio Code
-all_appsSystem = ['Headspace', 'Safari', 'Slack']
 headspace = App('Headspace')
 safari = App('Safari')
 slack = App('Slack')
@@ -25,7 +27,8 @@ messages = App('Messages', True)
 notes = App('Notes', True)
 stickies = App('Stickies', True)
 stocks = App('Stocks', True)
-
+all_apps = [music, safari, calendar, messages, notes, stickies, stocks,
+    headspace, safari, slack]
 #  * create the menu for the routine
 while True:
         print('''
@@ -50,8 +53,8 @@ while True:
                     break
                 elif des == '1':
                     #close apps 
-                    safari.close_app() and slack.close_app()
-                    # slack.close_app()
+                    safari.close_app()
+                    slack.close_app()
                     break
 
         elif des == '2':
@@ -66,7 +69,7 @@ while True:
 1) Close After School Apps''')
                 des = input('Number: ')
                 if des == '0':
-                    break
+                    continue
                 elif des == '1':                    
                     #close apps 
                     safari.close_app()
@@ -84,7 +87,7 @@ while True:
 1) Close Resting Apps''')
             des = input('Number: ')
             if des == '0':
-                break
+                continue
             elif des == '1':
                 #close apps
                 safari.close_app()
@@ -93,10 +96,25 @@ while True:
 
         elif des == '4':
             # todo (close specific or all apps)
-            #! THIS NEEDS FIXIN
-            for title in all_appsSystem:
-                title.close_appSystem()
-            print(all_apps)
+            #! THIS NEEDS FIXING
+
+            while True:
+                print('''
+0) Go back
+1) Any apps you don't want to close? 
+2) Close All
+                ''')
+                des = input('Number: ')
+                if des == '1':
+                    print('Which app should I leave open?')
+                    for app in all_apps:
+                        print(app.app_name, end = '|')
+                    # dont_close = input("\nDon't close: ")
+                    # all_apps.remove(dont_close)
+                    # print(all_apps)
+                elif  des == '2':            
+                    for app in all_apps:
+                        app.close_app()
 
         else: 
             break
