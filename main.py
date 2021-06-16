@@ -1,4 +1,3 @@
-
 from app import App
 import os
 # TODO need to make a READ ME 
