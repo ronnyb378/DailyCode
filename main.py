@@ -1,8 +1,6 @@
 
 from App import App
 import os
-# import colorama
-# from colorama import Fore, Back, Style
 # TODO need to make a READ ME 
 
 #what did you learn
@@ -25,17 +23,17 @@ all_apps = [music, safari, calendar, messages, notes, stickies, stocks,
     headspace, safari, slack]
 #  * create the menu for the routine
 while True:
-        print('''
+        print('\033[32m' + '''
 1) School
 2) After School
 3) Resting
-4) Close Apps
-5) Exit\n''')
+4) Close Apps''' + '\033[39')
+        print('\033[4;31m' + '5) Exit\n' + '\033[0;39m')
         des = input('Number: ')
         if des == '1':
             safari.open_app()
             slack.open_app()
-            des = input('\nWant the launchpad?(y/n): ')
+            des = input('\033[32m'+'\nWant the launchpad?(y/n): ')
             if des == 'y':
                 launchpad.open_app()             
             while True:
@@ -43,7 +41,7 @@ while True:
 0) Go back
 1) Close School Apps
 ''')
-                des = input('Number: ')
+                des = input('\033[0;39m'+'Number: ')
                 if des == '0':
                     break
                 elif des == '1':
@@ -59,10 +57,10 @@ while True:
             messages.open_app()
             stickies.open_app()
             while True:
-                print('''
+                print('\033[32m'+'''
 0) Go back
 1) Close After School Apps''')
-                des = input('\nNumber: ')
+                des = input('\033[0;39m'+'\nNumber: ')
                 if des == '0':
                     break
                 elif des == '1':                    
@@ -78,10 +76,10 @@ while True:
             messages.open_app()
             music.open_app()
             while True:
-                print('''
+                print('\033[32m'+'''
 0) Go back
 1) Close Resting Apps''')
-                des = input('\nNumber: ')
+                des = input('\033[0;39m'+'\nNumber: ')
                 if des == '0':
                     break
                 elif des == '1':
@@ -92,11 +90,9 @@ while True:
         elif des == '4':
 
             while True:
-                print('''
-0) Go back
-1) Any apps you don't want to close? 
-2) Close All
-                ''')
+                print('\033[32m'+'0) Go back')
+                print('\033[31m'+"1) Any apps you don't want to close?")
+                print('\033[1;4;31m'+'2) Close All' + '\033[0;39m')
                 des = input('\nNumber: ')
                 if des == '1':
                     name_of_app = []
