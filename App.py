@@ -13,7 +13,7 @@ class App:
     def open_appSystem(self):
         os.system(f"open /System/Applications/{self.app_name}.app")
         opened_System.append(f'{self.app_name}')
-        print(opened_System)
+        # print(opened_System)
         return opened_System
 
     #? this is another path to the second half of applications         
@@ -23,11 +23,11 @@ class App:
         else:
             os.system(f'open /Applications/{self.app_name}.app')
             opened.append(f'{self.app_name}')
-            print(opened)
+            # print(opened)
             return opened
 
-    # #? this is to close any application located under System
-    def close_appSystem(self):
+    # # #? this is to close any application located under System
+    # def close_appSystem(self):
             os.system(f'killall {self.app_name}')
             
     #?to close an application located under Applications
